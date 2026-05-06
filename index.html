@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web DAW Roll Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <h1>Web DAW Piano Roll Editor</h1>
+        <p>Ardour-style workflow adapted for web: piano-roll editing, loop playback, and web audio effects.</p>
+      </header>
+
+      <section class="controls" aria-label="Playback controls">
+        <button id="playToggle" type="button">Play</button>
+        <button id="clear" type="button" class="ghost">Clear</button>
+        <button id="addBar" type="button" class="ghost">+ 1 Bar</button>
+        <button id="removeBar" type="button" class="ghost">- 1 Bar</button>
+
+        <label>
+          Tempo
+          <input id="tempo" type="range" min="70" max="180" value="120" />
+          <span id="tempoValue">120 BPM</span>
+        </label>
+
+        <label>
+          Reverb
+          <input id="reverb" type="range" min="0" max="100" value="22" />
+          <span id="reverbValue">22%</span>
+        </label>
+
+        <label>
+          Length
+          <span id="stepsValue">16 steps</span>
+        </label>
+      </section>
+
+      <section class="roll-wrap">
+        <div id="roll" class="roll" role="grid" aria-label="Piano roll"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
