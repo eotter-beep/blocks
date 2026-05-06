@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piano Roll</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <h1>Piano Roll</h1>
+        <p>Click or drag to place notes. Auto-scales and loops playback.</p>
+      </header>
+
+      <section class="controls" aria-label="Playback controls">
+        <button id="playToggle" type="button">Play</button>
+        <button id="clear" type="button" class="ghost">Clear</button>
+
+        <label>
+          Tempo
+          <input id="tempo" type="range" min="70" max="180" value="120" />
+          <span id="tempoValue">120 BPM</span>
+        </label>
+
+        <label>
+          Reverb
+          <input id="reverb" type="range" min="0" max="100" value="22" />
+          <span id="reverbValue">22%</span>
+        </label>
+
+        <label>
+          Steps
+          <input id="steps" type="range" min="8" max="32" value="16" step="4" />
+          <span id="stepsValue">16</span>
+        </label>
+      </section>
+
+      <section class="roll-wrap">
+        <div id="roll" class="roll" role="grid" aria-label="Piano roll"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
